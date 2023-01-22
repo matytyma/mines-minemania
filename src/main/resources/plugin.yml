@@ -1,0 +1,19 @@
+name: MinesPlugin
+version: '${version}'
+main: me.kolombooo.minesplugin.Main
+api-version: 1.19
+prefix: Mines
+authors: [ matytyma ]
+description: MineMania Mines plugin
+website: matytyma.github.io
+commands:
+  mines:
+    description: Mines plugin command
+    usage: /mines
+permissions:
+  mines.world.mine:
+    default: op
+  mines.world.mine-vip:
+    default: op
+  mines.world.mine-admin:
+    default: op
