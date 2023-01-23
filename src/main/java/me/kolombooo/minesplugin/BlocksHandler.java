@@ -2,7 +2,6 @@ package me.kolombooo.minesplugin;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 
 import java.util.PriorityQueue;
 
@@ -11,7 +10,7 @@ public class BlocksHandler {
 
 	public static void addBlock(Material material, Location location) {
 		int duration = 0;
-		if (material.equals(Material.COAL_ORE)) duration = 6_000;
+		if (material.equals(Material.COAL_ORE)) duration = 60_000;
 		if (material.equals(Material.IRON_ORE)) duration = 180_000;
 		if (material.equals(Material.GOLD_ORE)) duration = 300_000;
 		if (material.equals(Material.REDSTONE_ORE)) duration = 420_000;
