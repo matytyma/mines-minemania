@@ -12,7 +12,12 @@ public class BrokenOre implements Comparable<BrokenOre> {
 	BlockData blockData;
 
 	public BrokenOre(Material material, Location location, long respawnTime) {
-		this.blockData = Material.valueOf(material.toString().replace("DEEPSLATE_", "")).createBlockData();
+		System.out.println(material);
+		if (!material.toString().equals("BEDROCK")) {
+			this.blockData = Material.valueOf(material.toString().replace("DEEPSLATE_", "")).createBlockData();
+		} else {
+			this.blockData = Material.ANCIENT_DEBRIS.createBlockData();
+		}
 		this.location = location;
 		this.respawnTime = respawnTime;
 	}

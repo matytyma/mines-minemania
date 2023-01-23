@@ -20,10 +20,10 @@ public class MineListener implements Listener {
 		}
 		if (type.contains("ORE")) {
 			if (type.equals("BEDROCK")) {
-				Bukkit.getScheduler().runTask(Main.getPlugin(Main.class), () -> block.setType(Material.BEDROCK));
-				block.setBlockData(Material.BEDROCK.createBlockData());
+				block.setType(Material.BEDROCK);
+				Bukkit.getScheduler().runTaskLater(Main.getPlugin(Main.class), () -> block.setType(Material.BEDROCK), 1);
 			} else {
-				block.setBlockData(Material.valueOf("DEEPSLATE_" + type).createBlockData());
+				Bukkit.getScheduler().runTaskLater(Main.getPlugin(Main.class), () -> block.setType(Material.valueOf("DEEPSLATE_" + type)), 1);
 			}
 			BlocksHandler.addBlock(block.getType(), block.getLocation().clone());
 		} else {
