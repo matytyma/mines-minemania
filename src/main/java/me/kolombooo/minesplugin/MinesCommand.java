@@ -1,7 +1,5 @@
 package me.kolombooo.minesplugin;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.event.ClickEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +16,7 @@ public class MinesCommand implements CommandExecutor, TabCompleter {
 	@Override
 	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 		if (!(sender instanceof Player player)) {
-			Bukkit.getLogger().warning("Tento příkaz mohou používat pouze hráči!");
+			Bukkit.getLogger().warning(ConfigHandler.onlyPlayers);
 			return true;
 		}
 		if (args.length == 0 || args[0].equals("help")) {
@@ -37,15 +35,13 @@ public class MinesCommand implements CommandExecutor, TabCompleter {
 					}
 				}
 			}
-			case "info" ->
-					sender.sendMessage(Component.text("\n§f-----------§6§l Informace o Dolech §f-----------\n§6Zábava v dolech s obnovujícími bloky úspěšně zajištěna!\n§6Plugin s láskou vytvořil ")
-							.append(Component.text("§ematytyma").clickEvent(ClickEvent.clickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/matytyma"))));
+			case "info" -> sender.sendMessage(ConfigHandler.pluginInfo);
 			case "reload" -> {
 				if (player.hasPermission("mines.reload")) {
 					ConfigHandler.reloadConfig();
-					player.sendMessage("§6§l[Doly] §r§aKonfigurace pluginu byla úspěšně načtena!");
+					player.sendMessage(ConfigHandler.prefix + ConfigHandler.successfulReload);
 				} else {
-					player.sendMessage("§6§l[Doly] §r§cNemáš dostatečná oprávnění!");
+					player.sendMessage(ConfigHandler.prefix + ConfigHandler.noPermission);
 				}
 			}
 		}
@@ -54,47 +50,19 @@ public class MinesCommand implements CommandExecutor, TabCompleter {
 
 	public static void sendCommandHelp(CommandSender sender) {
 		if (sender.hasPermission("mines.reload")) {
-			sender.sendMessage("""
-
-					§f----------- §6§lNápověda pro Doly §f-----------
-					§6/mines tp <důl> §7-§e Teleportuje tě do daného dolu
-					§6/mines info §7-§e Zobrazí informace o pluginu
-					§6/mines reload §7-§e Znovu načte konfiguraci pluginu
-					§6/mines help §7-§e Zobrazí tuto nápovědu
-					""");
+			sender.sendMessage(ConfigHandler.helpReload);
 		} else {
-			sender.sendMessage("""
-
-					§f----------- §6§lNápověda pro Doly §f-----------
-					§6/mines tp <důl> §7-§e Teleportuje tě do daného dolu
-					§6/mines info §7-§e Zobrazí informace o pluginu
-					§6/mines help §7-§e Zobrazí tuto nápovědu
-					""");
+			sender.sendMessage(ConfigHandler.help);
 		}
 	}
 
 	public static void sendTeleportHelp(CommandSender sender) {
 		if (sender.hasPermission("mines.world.mine-admin")) {
-			sender.sendMessage("""
-					 
-					§f----------- §6§lNápověda pro Doly §f-----------
-					§6/mines tp admin §7-§e Teleportuje tě do admin dolu
-					§6/mines tp vip §7-§e Teleportuje tě do vip dolu
-					§6/mines tp §7-§e Teleportuje tě do základního dolu
-					""");
+			sender.sendMessage(ConfigHandler.teleportHelpAdmin);
 		} else if (sender.hasPermission("mines.world.mine-vip")) {
-			sender.sendMessage("""
-					     
-					§f----------- §6§lNápověda pro Doly §f-----------
-					§6/mines tp vip §7-§e Teleportuje tě do vip dolu
-					§6/mines tp §7-§e Teleportuje tě do základního dolu
-					""");
+			sender.sendMessage(ConfigHandler.teleportHelpVip);
 		} else {
-			sender.sendMessage("""
-					     
-					§f----------- §6§lNápověda pro Doly §f-----------
-					§6/mines tp §7-§e Teleportuje tě do základního dolu
-					""");
+			sender.sendMessage(ConfigHandler.teleportHelp);
 		}
 	}
 

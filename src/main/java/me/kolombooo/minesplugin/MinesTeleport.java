@@ -10,7 +10,7 @@ public class MinesTeleport {
 		if (player.hasPermission("mines.teleport." + mineName)) {
 			player.teleport(Objects.requireNonNull(Bukkit.getWorld(mineName)).getSpawnLocation());
 		} else {
-			player.sendMessage("§6§l[Doly] §r§cNemáš dostatečná oprávnění!");
+			player.sendMessage(ConfigHandler.prefix + "§r§cNemáš dostatečná oprávnění!");
 		}
 	}
 }
