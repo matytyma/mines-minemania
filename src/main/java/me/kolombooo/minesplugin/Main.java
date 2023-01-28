@@ -8,6 +8,7 @@ import java.util.Objects;
 public final class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
+		ConfigHandler.reloadConfig();
 		Objects.requireNonNull(getCommand("mines")).setExecutor(new MinesCommand());
 		Bukkit.getPluginManager().registerEvents(new MineListener(), this);
 		Bukkit.getScheduler().runTaskTimer(this, new RespawnChecker(), 0, 20);
