@@ -5,15 +5,16 @@ api-version: 1.19
 prefix: Mines
 authors: [ matytyma ]
 description: MineMania Mines plugin
-website: matytyma.github.io
 commands:
   mines:
     description: Mines plugin command
     usage: /mines
 permissions:
-  mines.world.mine:
+  mines.teleport.mine:
     default: op
-  mines.world.mine-vip:
+  mines.teleport.mine-vip:
     default: op
-  mines.world.mine-admin:
+  mines.teleport.mine-admin:
+    default: op
+  mines.reload:
     default: op
