@@ -18,8 +18,7 @@ public class MineListener implements Listener {
 	public void onBlockBreak(BlockBreakEvent event) {
 		Block block = event.getBlock();
 		String worldName = block.getWorld().getName();
-		if (!worldName.equals("mine") && !worldName.equals("mine_vip") && !worldName.equals("mine_admin") && !worldName.equals("world"))
-			return;
+		if (!worldName.equals("mine") && !worldName.equals("mine_vip") && !worldName.equals("mine_admin")) return;
 		String type = block.getType().toString();
 		if (type.contains("DEEPSLATE_")) {
 			event.setCancelled(true);
