@@ -13,36 +13,35 @@ public class BlocksHandler {
 	public static void addBlock(Player player, Material material, Location location) {
 		int duration = 0, reward = 0;
 		if (material.equals(Material.COAL_ORE)) {
-			duration = 60_00;
+			duration = 60_000;
 			reward = ConfigHandler.rewards.get("COAL_ORE");
 		}
 		if (material.equals(Material.IRON_ORE)) {
-			duration = 180_00;
+			duration = 180_000;
 			reward = ConfigHandler.rewards.get("IRON_ORE");
 		}
 		if (material.equals(Material.GOLD_ORE)) {
-			duration = 300_00;
+			duration = 300_000;
 			reward = ConfigHandler.rewards.get("GOLD_ORE");
 		}
 		if (material.equals(Material.REDSTONE_ORE)) {
-			duration = 420_00;
+			duration = 420_000;
 			reward = ConfigHandler.rewards.get("REDSTONE_ORE");
 		}
 		if (material.equals(Material.LAPIS_ORE)) {
-			duration = 420_00;
+			duration = 420_000;
 			reward = ConfigHandler.rewards.get("LAPIS_ORE");
 		}
 		if (material.equals(Material.EMERALD_ORE)) {
-			duration = 540_00;
+			duration = 540_000;
 			reward = ConfigHandler.rewards.get("EMERALD_ORE");
 		}
 		if (material.equals(Material.DIAMOND_ORE)) {
-			duration = 900_00;
+			duration = 900_000;
 			reward = ConfigHandler.rewards.get("DIAMOND_ORE");
 		}
 		if (material.equals(Material.ANCIENT_DEBRIS)) {
-			System.out.println("Ancient debris");
-			duration = 1_800_00;
+			duration = 1_800_000;
 			reward = ConfigHandler.rewards.get("ANCIENT_DEBRIS");
 		}
 		blocks.add(new BrokenOre(material, location, System.currentTimeMillis() + duration));
