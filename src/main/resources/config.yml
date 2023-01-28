@@ -1,4 +1,4 @@
-drop-chance:
+drop-chances:
   COAL_ORE: 75
   IRON_ORE: 60
   GOLD_ORE: 50
