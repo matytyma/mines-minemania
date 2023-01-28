@@ -16,3 +16,16 @@ rewards:
   EMERALD_ORE: 32
   DIAMOND_ORE: 64
   ANCIENT_DEBRIS: 128
+messages:
+  prefix: "§6§l[Doly] §r"
+  only-players: "Tento příkaz mohou používat pouze hráči!"
+  no-permission: "§r§cNemáš dostatečná oprávnění!"
+  plugin-info: "\n§f-----------§6§l Informace o Dolech §f-----------\n§6Zábava v dolech s obnovujícími bloky úspěšně zajištěna!\n§6Plugin s láskou vytvořil §ematytyma"
+  successful-reload: "§r§aKonfigurace pluginu byla úspěšně načtena!"
+  help:
+    normal: "§f----------- §6§lNápověda pro Doly §f-----------\n§6/mines tp <důl> §7-§e Teleportuje tě do daného dolu\n§6/mines info §7-§e Zobrazí informace o pluginu\n§6/mines help §7-§e Zobrazí tuto nápovědu"
+    reload: "\n§f----------- §6§lNápověda pro Doly §f-----------\n§6/mines tp <důl> §7-§e Teleportuje tě do daného dolu\n§6/mines info §7-§e Zobrazí informace o pluginu\n§6/mines reload §7-§e Znovu načte konfiguraci pluginu\n§6/mines help §7-§e Zobrazí tuto nápovědu"
+  teleport-help:
+    normal: "§f----------- §6§lNápověda pro Doly §f-----------\n§6/mines tp §7-§e Teleportuje tě do základního dolu"
+    vip: "\n§f----------- §6§lNápověda pro Doly §f-----------\n§6/mines tp §7-§e Teleportuje tě do základního dolu\n§6/mines tp vip §7-§e Teleportuje tě do vip dolu"
+    admin: "\n§f----------- §6§lNápověda pro Doly §f-----------\n§6/mines tp §7-§e Teleportuje tě do základního dolu\n§6/mines tp vip §7-§e Teleportuje tě do vip dolu\n§6/mines tp admin §7-§e Teleportuje tě do admin dolu"
