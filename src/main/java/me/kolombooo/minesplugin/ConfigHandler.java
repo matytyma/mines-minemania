@@ -13,6 +13,7 @@ public class ConfigHandler {
 	static void reloadConfig() {
 		Main plugin = Main.getPlugin(Main.class);
 		plugin.saveDefaultConfig();
+		plugin.reloadConfig();
 		FileConfiguration config = plugin.getConfig().options().copyDefaults(true).configuration();
 		dropChances.clear();
 		for (String s : Objects.requireNonNull(config.getConfigurationSection("drop-chance")).getKeys(false)) {
